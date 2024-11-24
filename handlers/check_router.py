@@ -5,10 +5,8 @@ import platform
 
 async def check_router(ip_address: str, log: bool) -> str:
     errors = []
-
     # Ping
     ping = await check_ping(ip_address, log, errors)
-
     # HTTP Check
     http = False
     try:

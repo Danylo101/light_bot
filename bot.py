@@ -16,7 +16,11 @@ async def main() -> None:
     dp.include_router(router)
     await dp.start_polling(bot)
 
-
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("Bot is shutting down...")
+    except Exception as e:
+        logging.error(f"An error occurred: {e}")

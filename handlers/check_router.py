@@ -33,9 +33,9 @@ async def check_router(ip_address: str, log: bool) -> str:
 
     # Combine results
     if ping or http or tcp:
-        result = "Світло є"
+        result = "Світло є💡"
     else:
-        result = "Світла немає"
+        result = "Світла немає\nДіставай ліхтар🔦"
 
     if log and errors:
         result += f"\nПомилки:\n" + "\n".join(errors)
